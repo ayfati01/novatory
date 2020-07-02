@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
+    'Vendor',
 ]
 
 MIDDLEWARE = [
@@ -57,8 +59,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(
                 BASE_DIR,
-                'templates')]
-        ,
+                'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
