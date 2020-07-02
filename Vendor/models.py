@@ -12,6 +12,12 @@ class Vendor(models.Model):
     ContactFax      = PhoneNumberField(blank=True)
     ContactEmail    = models.EmailField(blank=True)
     ContactWebsite  = models.CharField(max_length=200, blank=True)
-    PurchasingPayDuration = models.IntegerField(help_text='Duration to pay balance', blank=True)
-    PurchasingDiscount    = models.DecimalField(decimal_places=2, max_digits=5)
-    PurchasingTaxRate     = models.DecimalField(default=6.00, max_digits=7.00, decimal_places=2, validators=[MaxValueValidator(7.00), MinValueValidator(4.00)])
+    PurchasingPayDuration = models.IntegerField(help_text='Duration in days to pay balance', blank=True)
+    PurchasingDiscount    = models.DecimalField(decimal_places=1, max_digits=5)
+    PurchasingTaxRate     = models.DecimalField(default=6.0, max_digits=7, decimal_places=2, validators=[MaxValueValidator(7), MinValueValidator(4)])
+
+    def __str__(self):
+        return self.Name
+
+    class Meta:
+        verbose_name_plural = 'Vendors'
