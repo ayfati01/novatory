@@ -81,4 +81,4 @@ class Invoice(models.Model):
     Items = models.ManyToManyField(Item)
 
     def __str__(self):
-        return f"Vendor: {self.Vendor} Delivered on {self.delivery_date}"
+        return f"Vendor: {self.Vendor} Delivered on {self.Delivery_date}"
